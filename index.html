@@ -1,28 +1,51 @@
+<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset = "utf-8">
+		<meta charset="utf-8">
 	</head>
-	<body>
-		<a href="http://localhost/myweb/index.html">
-		절대경로</a>
-		<a href="../index.html"> 상대경로 </a>
-		<a href="http://localhost/myweb/index.html" target="_blank">이동</a>
-		<!--mail보내기-->
-		<a href="mailto:test@naver.com">test@naver.com</a>
-		<p></p>
-		<ul style="list-style-type: square"> <!--점목록-->
-			<li>Pizza</li>
-				<ol>
-					<li>pizzahut</li>
-					<li>cheese</li>
-				</ol>
-			<li>Apple</li>
-			<li>Orange</li>
-		</ul>
-		<ol> <!--숫자목록-->
-			<li>Pizza</li>
-			<li>Apple</li>
-			<li>Orange</li>
-		</ol>
-	</body>
+		<body>
+			<fieldset>
+					<legend>로그인 화면</legend>
+			<form method="post" action="Employee.jsp">
+				아 이 디 : <input type="text" name="userId" size="8" required="바보!"><br>
+				비밀번호 : <input type="password" name="userPwd" size="8" required="입력!"><br>
+				<textarea cols="20" rows="20"></textarea><br>
+				1학년 : <input type="radio" name="grade" checked>
+				2학년 : <input type="radio" name="grade"><br>
+
+				농구 : <input type="checkbox" name="hobby" checked>
+				축구 : <input type="checkbox" name="hobby"><br>
+
+				<input type="submit" value="Login">&nbsp;
+				<input type="reset" value="Cancel"><br>
+
+				<button type="button"><a href="http://www.naver.com"><img src="dog1.jpg" width="50" height="50"></a>
+				</button>
+			<button type = " button" onclick="alert('Clicked');">Click Me</button><br>
+			<select name="job" size="5" multiple="">
+				<option value="0">선택</option>
+				<option value="0">무직</option>
+				<option value="0">실직</option>
+				<option value="0">창업</option>
+				<option value="0">취직</option>
+				<option value="0">도피</option>
+			</select>
+				<input type="text" width="50" list="majorlist" name="major">
+				<datalist id="majorlist">
+					<option value="Software">소프트웨어</option>
+					<option value="Robot">로봇</option>
+					<option value="System">시스템</option>
+					<option value="Service">서비스</option>
+				</datalist>
+
+				<p>쓰기가능 : <input type="text" name="name" size="20" placeholder="이름입력" autofocus></p>
+				<p>읽기전용 : <input type="text" name="name" size="10" readonly></p>
+				<p>사용안함 : <input type="text" name="name" size="10" disabled></p>
+				<p>자동완성 : <input type="text" name="name" size="10" autocomplete="on" required></p>
+
+			</form>	
+			<a href="Employee.jsp?userId=test">안녕하세요</a>
+			</fieldset>
+		</body>
 </html>

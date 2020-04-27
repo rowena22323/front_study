@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<script type="text/javascript">
+		/* validation check - data preprocessing (client side)*/
 		function msg(str,str2){//동일한 함수이름 사용 (onClick)
 			var userId = document.getElementById("userId").value;
 			var userPwd = document.getElementById("userPwd").value;
@@ -21,15 +22,20 @@
 				document.getElementById("msg").style.color = "red";
 				return false;
 			}
+			if(userPwd != userPwds){
+				document.getElementById("msg").innerHTML = "비밀번호 정보가 일치하지 않습니다";
+				document.getElementById("msg").style.color = "red";
+				return false;
+			}
 			else if(userId=="test" && userPwd=="1234"&& userPwds=="1234"){
 				document.getElementById("msg").innerHTML = "로그인되었습니다";
 				document.getElementById("msg").style.color = "red";
 				return true;
 			}
-			// else{
-			// 	document.getElementById("msg").innerHTML = "로그인 정보를 확인하세요";
-			// 	document.getElementById("msg").style.color = "red";
-			// }
+			else{
+				document.getElementById("msg").innerHTML = "로그인 정보를 확인하세요";
+				document.getElementById("msg").style.color = "red";
+			}
 			//userId = "test", userPwd = "1234"는 로그인 처리
 
 		}

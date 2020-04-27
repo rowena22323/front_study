@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function msg(str, str2){
+			//alert(typeof str);
+			//alert(typeof str2);
+			// alert(document.getElementById("msg").innerHTML);
+			// document.getElementById("msg").innerHTML = "<b>test2</b>";
+			// alert(document.getElementById("msg").innerText);
+			document.getElementById("msg").innerHTML = "안녕하세요";
+			document.getElementById("msg").style.color = "red";
+		}
+	</script>
+	
+</head>
+<body>
+	<table style="background-color: #ffff00;">
+		<tr align="center">
+			<td colspan="2">
+				<img src="cat1.jpg" width="200"></td>
+		</tr>
+		<tr>
+			<td> 아이디 : </td>
+			<td><input type="text" name="userId" id = "userId" size = "8"></td>
+		</tr>
+		<tr>
+			<td> 비밀번호 : </td>
+			<td><input type="password" name="userPwd" id = "userPwd" size = "8"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="Login" onclick="msg('test',20);"></td>
+		</tr>
+	</table>
+		<span id="msg"></span>
+</body>
+</html>

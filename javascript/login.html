@@ -3,29 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<script type="text/javascript">
-		function LoginProcess(){//동일한 함수이름 사용 (onClick)
+		function msg(str,str2){//동일한 함수이름 사용 (onClick)
 			var userId = document.getElementById("userId").value;
 			var userPwd = document.getElementById("userPwd").value;
-			if(userId == ""||userPwd==""){
-				alert("침입자다!!!");
-				return flase;
+			var userPwds = document.getElementById("userPwds").value;
+			// if(userId == ""||userPwd==""){
+			// 	alert("침입자다!!!");
+			// 	return flase;
+			// }
+			if(userId == ""	){
+				document.getElementById("msg").innerHTML = "ID를 확인하세요";
+				document.getElementById("msg").style.color = "red";
+				return false;
 			}
-			// 	){
-			// 	alert("아이디를 입력해냥!");
-			// 	return false;
-			// }
-			// if(userPwd == ""){
-			// 	alert("비밀번호 까먹었냥!");
-			// 	return false;
-			// }
-			else if(userId=="test" && userPwd=="1234"){
-				alert("로그인");
+			if(userPwd == "" && userPwds==""){
+				document.getElementById("msg").innerHTML = "PW를 확인하세요";
+				document.getElementById("msg").style.color = "red";
+				return false;
+			}
+			else if(userId=="test" && userPwd=="1234"&& userPwds=="1234"){
+				document.getElementById("msg").innerHTML = "로그인되었습니다";
+				document.getElementById("msg").style.color = "red";
 				return true;
 			}
-			else{
-				alert("잘 생각해보시오...")
-			}
+			// else{
+			// 	document.getElementById("msg").innerHTML = "로그인 정보를 확인하세요";
+			// 	document.getElementById("msg").style.color = "red";
+			// }
 			//userId = "test", userPwd = "1234"는 로그인 처리
+
 		}
 	</script>
 	
@@ -45,10 +51,15 @@
 			<td><input type="password" name="userPwd" id = "userPwd" size = "8"></td>
 		</tr>
 		<tr>
+			<td> 비밀번호 확인 : </td>
+			<td><input type="password" name="userPwds" id = "userPwds" size = "8"></td>
+		</tr>
+		<tr>
 			<td colspan="2">
-				<input type="button" value="Login" onclick="LoginProcess()"></td>
+				<input type="button" value="Login" onclick="msg('test',20)"></td>
 		</tr>
 
 	</table>
+		<span id="msg"></span>
 </body>
 </html>
